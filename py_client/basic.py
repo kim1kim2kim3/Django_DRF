@@ -169,7 +169,7 @@ json: {'args': {}, 'data': '', 'files': {}, 'form': {'query': 'Hello World'}, 'h
 
 
 
-endpoint = "http://127.0.0.1:8080/"
+endpoint = "http://127.0.0.1:8000/"
 
 get_response = requests.get(endpoint)
 print(f"get_response: {get_response}")
@@ -178,3 +178,33 @@ print(f"text: {get_response.text}") # print raw text response
 print("--------------------------------")
 print(f"status_code: {get_response.status_code}")
 print("--------------------------------")
+
+
+
+
+endpoint = "http://127.0.0.1:8000/api"
+
+get_response = requests.get(endpoint)
+print(f"get_response: {get_response}")
+print("--------------------------------")
+print(f"text: {get_response.text}") # print raw text response
+print("--------------------------------")
+print(f"status_code: {get_response.status_code}")
+print("--------------------------------")
+print(f"json: {get_response.json()}") # print json response
+print("--------------------------------")
+print(f"message: {get_response.json()['message']}")
+
+
+
+""" 
+get_response: <Response [200]>
+--------------------------------
+text: {"message": "Hi there, this is your Django API response"}
+--------------------------------
+status_code: 200
+--------------------------------
+json: {'message': 'Hi there, this is your Django API response'}
+--------------------------------
+message: Hi there, this is your Django API response 
+"""
